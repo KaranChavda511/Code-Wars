@@ -1,0 +1,80 @@
+.challenge-editor {
+    margin-top: 2rem;
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .editor-header h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .editor-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .run-btn,
+  .submit-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .run-btn {
+    background-color: black;
+    color: white;
+  }
+  
+  .run-btn:hover {
+    background-color: gray;
+  }
+  
+  .submit-btn {
+    background-color: red;
+    color: white;
+  }
+  
+  .submit-btn:disabled {
+    background-color: rgb(168, 156, 156);
+    cursor: not-allowed;
+  }
+  
+  .submit-btn:hover:enabled {
+    background-color: gray;
+  }
+  
+  .editor-wrapper {
+    border: 1px solid var(--gray-light);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+  
+  .test-results {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--gray-light);
+    border-radius: 0.75rem;
+  }
+  
+  .test-results h4 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  

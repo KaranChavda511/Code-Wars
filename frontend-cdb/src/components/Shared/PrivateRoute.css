@@ -1,0 +1,10 @@
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  

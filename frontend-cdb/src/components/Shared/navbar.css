@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Hentaigana:wght@200..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+/* 
+.navbar{
+    padding: 1.5em;
+    background-color: rgb(40, 40, 40);
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo{
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bolder;
+    color: white;
+}
+
+.navbarLinks{
+    margin: 0 1.5em;
+    color: gray;
+    text-decoration: none;
+}
+
+.activeColor{
+    color: white;
+}
+
+.login-btn{
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+    background-color: white;
+    padding: 0.5em 0.7em;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.login-btn:active{
+    /* background-color: red; 
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.438) inset;
+}
+
+.signup-btn{
+    color: black;
+    text-decoration: none;
+    margin: 0 5px;
+    background-color: white;
+    padding: 0.5em 0.7em;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.signup-btn:active{
+    /* background-color: red; 
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.438);
+} */
+
+
+
+/* ye niche vali css thik hai but light mode vali hi hai */
+/*iss vali css ko abhi apply kar raha hu baad me dark mode ke logic vali apply kar dunga, joki niche likhi hai, abhi uss vali me kuch problems hai but baad me thik kar dunga.*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: #fff;
+    border-bottom: 2px solid #eee;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logoDiv .logo {
+    font-size: 28px;
+    font-weight: 800;
+    text-decoration: none;
+    color: #6a0dad;
+    letter-spacing: 1px;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 24px;
+  }
+  
+  .navbarLinks {
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+  }
+  
+  /* .navbarLinks:hover {
+    background-color: #f0f0f0;
+  } */
+  
+  .activeColor {
+    background-color: #6a0dad;
+    color: white;
+  }
+  
+  .navbar-auth {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .username {
+    font-weight: bold;
+  }
+  
+  .score {
+    font-size: 13px;
+    color: #777;
+  }
+  
+  .profile-link,
+  .admin-link,
+  .navbar-auth .login-btn,
+  .navbar-auth .signupBtn,
+  .logout-btn {
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .profile-link,
+  .admin-link {
+    background-color: #eee;
+    color: #333;
+  }
+  
+  .profile-link:hover,
+  .admin-link:hover {
+    background-color: #ddd;
+  }
+  
+  .navbar-auth .login-btn {
+    background-color: transparent;
+    color: #6a0dad;
+    border: 1.5px solid #6a0dad;
+  }
+  
+ .navbar-auth .login-btn:hover {
+    background-color: #6a0dad;
+    color: white;
+  }
+  
+  .navbar-auth .signupBtn {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .navbar-auth .signupBtn:hover {
+    background-color: #222;
+  }
+  
+  .logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .logout-btn:hover {
+    background-color: #e60000;
+  }
+
+
+
+
+
+
+
+/* ye niche vali kuch kaam ki  nahi he mere hisab se. */
+/* now ye niche vali css dark mode + variables.css ke sath compatible hai */
+/* 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow);
+}
+
+.navbar a {
+  color: var(--text-primary);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.navbar .links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+} */
+
+
+
+
+
+/* new darmode css */
+/* lekin abhi isse hata kar upper vali ko hi rehne de raha hu isme toggle button sahi se nahi dikh raha hai and navbar pura transparent hai scroll karne par. */
+/*
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: var(--bg-secondary);
+  border-bottom: 2px solid var(--border-color);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoDiv .logo {
+  font-size: 28px;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--primary);
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 24px;
+}
+
+.navbarLinks {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.navbarLinks:hover {
+  background-color: var(--bg-hover);
+}
+
+.activeColor {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.navbar-auth {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 10px;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.username {
+  font-weight: bold;
+}
+
+.score {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.profile-link,
+.admin-link,
+.navbar-auth .login-btn,
+.navbar-auth .signupBtn,
+.logout-btn {
+  text-decoration: none;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-link,
+.admin-link {
+  background-color: var(--button-secondary);
+  color: var(--text-primary);
+}
+
+.profile-link:hover,
+.admin-link:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.navbar-auth .login-btn {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+}
+
+.navbar-auth .login-btn:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.navbar-auth .signupBtn {
+  background-color: var(--button-primary);
+  color: var(--text-light);
+}
+
+.navbar-auth .signupBtn:hover {
+  background-color: var(--button-primary-hover);
+}
+
+.logout-btn {
+  background-color: var(--danger);
+  color: white;
+}
+
+.logout-btn:hover {
+  background-color: var(--danger-hover);
+}
+
+/* 🌙 Theme Toggle Switch *
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--border-color);
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--text-light);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+*/

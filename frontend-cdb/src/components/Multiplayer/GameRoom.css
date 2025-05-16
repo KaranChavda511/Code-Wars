@@ -1,0 +1,111 @@
+.game-room {
+    padding: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    color: var(--text-color);
+  }
+  
+  .game-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .game-meta {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 1rem;
+    color: var(--gray);
+  }
+  
+  .timer {
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  .challenge-count {
+    color: var(--primary);
+  }
+  
+  .start-btn {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .start-btn:hover {
+    background-color: var(--accent-dark);
+  }
+  
+  .game-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .players-section {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .challenge-section {
+    flex: 3;
+    min-width: 300px;
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .challenge-info {
+    margin-bottom: 1rem;
+  }
+  
+  .challenge-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .waiting-challenge {
+    padding: 1rem;
+    background-color: var(--gray-light);
+    border-radius: 0.5rem;
+    color: var(--gray-dark);
+  }
+  
+  .game-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .game-results h3 {
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+  
+  .game-results ol {
+    padding-left: 1.5rem;
+  }
+  
+  .game-results li {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  

@@ -1,0 +1,8 @@
+.multiplayer-page {
+    padding: 40px 60px;
+    min-height: 100vh;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  

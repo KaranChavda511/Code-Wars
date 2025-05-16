@@ -1,0 +1,140 @@
+.multiplayer-lobby {
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+  
+  .multiplayer-lobby h2 {
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .create-room {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .create-room input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-primary);
+  }
+  
+  .create-btn {
+    padding: 0.6rem 1.2rem;
+    /* background-color: var(--accent); */
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .create-btn:hover {
+    background-color: var(--accent-hover);
+  }
+  
+  .create-btn:disabled {
+    background-color: var(--disabled-bg);
+    cursor: not-allowed;
+  }
+  
+  .room-list h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-primary);
+  }
+  
+  .room-list p {
+    text-align: center;
+    color: var(--text-muted);
+  }
+  
+  .room-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-muted);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+  }
+  
+  .room-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .room-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+  
+  .room-players {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+  
+  .join-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--success);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .join-btn:hover {
+    background-color: var(--success-hover);
+  }
+  
+  .join-btn:disabled {
+    background-color: var(--disabled-bg);
+    cursor: not-allowed;
+  }
+
+  .room-full-badge {
+    background-color: #ff5c5c;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 6px;
+    margin-left: 8px;
+  }
+  
+  .player-avatars {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+  }
+  
+  .player-avatar {
+    background-color: var(--accent);
+    color: white;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow-sm);
+  }
+  

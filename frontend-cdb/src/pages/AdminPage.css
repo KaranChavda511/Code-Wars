@@ -1,0 +1,63 @@
+/* AdminPage.css */
+
+.admin-page {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+  }
+  
+  .admin-page h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+  }
+  
+  .admin-dashboard,
+  .user-manager {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+  }
+  
+  .admin-page .section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 0.5rem;
+  }
+  
+  .admin-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .admin-page th,
+  .admin-page td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .admin-page th {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .admin-page tr:hover {
+    background-color: var(--hover-bg);
+  }
+  
+  @media (max-width: 768px) {
+    .admin-page {
+      padding: 1rem;
+    }
+  }
+  

@@ -1,0 +1,118 @@
+.challenge-list {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .list-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .list-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+  
+  .filters {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .filters button {
+    padding: 0.5rem 1rem;
+    background-color: var(--bg-light);
+    border: 1px solid var(--gray-light);
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .filters button:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--accent);
+  }
+  
+  .filters button.active {
+    background-color: var(--accent);
+    color: white;
+    font-weight: 600;
+    border-color: var(--accent);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    padding: 2rem;
+  }
+  
+  /* Grid is handled in ChallengeCard.css */
+
+
+
+
+
+
+
+
+  .challenge-card-skeleton {
+    background: #f1f1f1;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    animation: pulse 1.5s infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+  }
+  
+  .challenge-card-skeleton .title,
+  .challenge-card-skeleton .desc,
+  .challenge-card-skeleton .footer {
+    background: #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .challenge-card-skeleton .title {
+    height: 24px;
+    width: 60%;
+  }
+  
+  .challenge-card-skeleton .desc {
+    height: 14px;
+    width: 90%;
+  }
+  
+  .challenge-card-skeleton .footer {
+    height: 18px;
+    width: 40%;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #f1f1f1;
+    }
+    50% {
+      background-color: #e0e0e0;
+    }
+    100% {
+      background-color: #f1f1f1;
+    }
+  }
+  
+  .challenge-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  

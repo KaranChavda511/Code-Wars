@@ -1,0 +1,55 @@
+.not-found-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    /* padding: 40px 20px; */
+    background-color: var(--bg);
+    color: var(--text);
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .not-found-page h1 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: var(--primary);
+  }
+  
+  .not-found-page p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .suggestions {
+    margin-top: 20px;
+  }
+  
+  .suggestions ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .suggestions li a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    padding: 10px 18px;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .suggestions li a:hover {
+    /* background-color: var(--primary);
+    color: var(--bg); */
+    background-color: #6a0dad;
+    color: white;
+  }
+  

@@ -1,0 +1,46 @@
+/* ChallengePage.css */
+
+.challenge-page {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .challenge-page h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+  }
+  
+  .challenge-page p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .challenge-page .code-section {
+    background-color: var(--code-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: var(--code-text);
+  }
+  
+  @media (max-width: 768px) {
+    .challenge-page {
+      padding: 1rem;
+    }
+  
+    .challenge-page h1 {
+      font-size: 1.5rem;
+    }
+  }
+  

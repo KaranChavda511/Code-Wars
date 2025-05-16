@@ -1,0 +1,211 @@
+/* profile.css
+
+.profile-page {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .profile-page h1,
+  .profile-page h2,
+  .profile-page h3 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+  }
+  
+  .profile-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    max-width: 600px;
+    margin: auto;
+    transition: background-color 0.3s ease;
+  }
+  
+  .profile-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-light);
+  }
+  
+  .profile-value {
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .edit-profile-btn {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    padding: 0.8rem 1.6rem;
+    border-radius: 8px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: var(--primary-color-dark);
+  }
+   */
+
+
+
+
+
+
+
+/* ye niche vali css ProfileForm and ProfileView ke liye bhi Apply hogi */
+
+/* ProfilePage Common */
+.profile-page {
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* ========== Profile View ========== */
+  .profile-view {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .profile-info {
+    margin-bottom: 2rem;
+  }
+  
+  .info-item {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .label {
+    color: var(--text-color-light);
+    font-weight: 500;
+  }
+  
+  .value {
+    font-weight: bold;
+    color: var(--text-color);
+  }
+  
+  /* Edit Button */
+  .profile-actions {
+    text-align: right;
+  }
+  
+  .edit-btn {
+    /* background-color: var(--primary-color); */
+    /* background-color: #d4cdcd;
+    color: black; */
+    background-color: #6a0dad;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn:hover {
+    /* background-color: var(--primary-color-dark); */
+    background-color: #d4cdcd;
+    color: black ;
+  }
+  
+  /* Badges */
+  .badges-section {
+    margin-top: 2rem;
+  }
+  
+  .badges-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .badge {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  /* ========== Profile Form ========== */
+  .profile-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+  }
+  
+  .profile-form h2 {
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    color: var(--text-color-light);
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+  }
+  
+  button[type="submit"] {
+    /* background-color: var(--primary-color); */
+    background-color: #6a0dad;
+    /* color: var(--button-text); */
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    /* background-color: var(--primary-color-dark); */
+    background-color: #d4cdcd;
+    color: black;
+  }
+  
+  button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  

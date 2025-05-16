@@ -1,0 +1,175 @@
+/* .challenge-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--gray-light);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .challenge-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .card-header h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin: 0;
+  }
+  
+  .card-header a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .description {
+    margin: 0.75rem 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .solved-count {
+    color: var(--gray);
+    font-size: 0.85rem;
+  }
+  
+  .solve-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+  }
+  
+  .solve-btn:hover {
+    background-color: var(--accent-dark);
+  }
+   */
+
+
+
+
+
+/* new css */
+
+.challenge-card {
+    /* background-color: var(--bg-secondary); */
+    background-color: #f7f7f7;
+    border: 1px solid var(--gray-light);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 280px;
+    max-width: 100%;
+  }
+  
+  .challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .card-header h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* .card-header h3::before {
+    content: '🧩';
+  } */
+  
+  .card-header a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .description {
+    margin: 0.75rem 0 1rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: auto;
+  }
+  
+  .solved-count {
+    color: var(--gray);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .solved-count::before {
+    content: '👨‍💻';
+  }
+  
+  .solve-btn {
+    padding: 0.5rem 1rem;
+    /* background-color: var(--accent); */
+    background-color: var(--accent-hover);
+    background-color: var();
+    color: white;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .solve-btn:hover {
+    /* background-color: var(--accent-dark); */
+    background-color: var(--muted-text);
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Grid Ready */
+  .challenge-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+  
