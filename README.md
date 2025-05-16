@@ -1,11 +1,11 @@
-Here’s the complete and well-structured `README.md` file for your **Code Debugging Battle (CDB)** project:
+Here’s the complete and well-structured `README.md` file for your **CODE WARS** project:
 
 ---
 
 
-# 🧠 Code Debugging Battle (CDB)
+# 🧠 CODE WARS
 
-**Code Debugging Battle (CDB)** is a real-time competitive programming platform where users can participate in live debugging contests, improve their coding skills, and climb the leaderboard. It features secure user authentication, interactive battle modes, real-time code evaluation, and performance insights.
+**CODE WARS** is a real-time competitive programming platform where users can participate in live debugging contests, improve their coding skills, and climb the leaderboard. It features secure user authentication, interactive battle modes, real-time code evaluation, and performance insights.
 
 ---
 
@@ -70,13 +70,13 @@ Follow these steps to set up the project on your local machine:
    ```
 
 2. Set up the backend:
-   - Navigate to the `backend` folder.
+   - Navigate to the `cd backend-cdb` folder.
    - Install dependencies: `npm install`
    - Set up environment variables: Create a `.env` file based on `.env.example.js` file.
    - Start the backend server: `npm run dev`
 
 3. Set up the frontend:
-   - Navigate to the client folder: `cd cdb-front-work`
+   - Navigate to the client folder: `cd frontend-cdb`
    - Install dependencies: `npm install`
    - Set up environment variables: Create a `.env` file based on `.env.example.js` file.
    - Start the client development server: `npm run dev`
