@@ -15,6 +15,7 @@ import NotFoundPage from './pages/NotFoundPage.jsx';
 import './assets/variables.css';
 
 
+
 function App() {
   return (
     <Routes>
