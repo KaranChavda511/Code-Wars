@@ -19,7 +19,7 @@ dotenv.config();
 
 const app = express();
 const server = createServer(app);
-
+console.log("EC2 demo")
 // Connect to MongoDB
 connectDB();
 
