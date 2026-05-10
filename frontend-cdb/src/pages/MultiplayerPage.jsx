@@ -4,7 +4,7 @@ import useDocumentTitle from '../hooks/useDocumentTitle.js';
 import { useAuth } from '../contexts/AuthContext.jsx';
 import MultiplayerLobby from '../components/Multiplayer/Lobby.jsx';
 import GameRoom from '../components/Multiplayer/GameRoom.jsx';
-import './multiplayerPage.css';
+import './MultiplayerPage.css';
 
 const MultiplayerPage = () => {
   useDocumentTitle('Multiplayer - CDB');

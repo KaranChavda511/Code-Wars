@@ -6,7 +6,10 @@
   "license": "ISC",
   "author": "",
   "type": "module",
-  "main": "server.js",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"

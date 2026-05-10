@@ -1,22 +1,24 @@
-
-import React,{ createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import io from 'socket.io-client';
 
 const SocketContext = createContext();
+
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:2001';
 
 export const SocketProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    // const newSocket = io(import.meta.env.VITE_API_URL, {
-    const newSocket = io(import.meta.env.VITE_SOCKET_URL, {
-      auth: { token: localStorage.getItem('token') },
+    const token = localStorage.getItem('token');
+    if (!token) return;
+
+    const newSocket = io(SOCKET_URL, {
+      auth: { token },
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,
     });
 
     setSocket(newSocket);
-
     return () => {
       newSocket.disconnect();
     };
@@ -29,6 +31,4 @@ export const SocketProvider = ({ children }) => {
   );
 };
 
-export const useSocket = () => {
-  return useContext(SocketContext);
-};
+export const useSocket = () => useContext(SocketContext);

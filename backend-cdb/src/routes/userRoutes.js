@@ -1,6 +1,12 @@
 // src/routes/userRoutes.js
 import express from "express";
-import { signup, login } from "../controllers/userController.js";
+import {
+  signup,
+  login,
+  getCurrentUser,
+  updateProfile,
+} from "../controllers/userController.js";
+import isLoggedIn from "../middlewares/authMiddleware.js";
 import logger from "../utils/logger.js";
 
 const userRoutes = express.Router();
@@ -12,5 +18,7 @@ userRoutes.use((req, res, next) => {
 
 userRoutes.post("/signup", signup);
 userRoutes.post("/login", login);
+userRoutes.get("/me", isLoggedIn, getCurrentUser);
+userRoutes.put("/profile", isLoggedIn, updateProfile);
 
 export default userRoutes;

@@ -2,37 +2,41 @@
 import { createServer } from "http";
 import express from "express";
 import { Server } from "socket.io";
-import dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
-import mongoose from "mongoose"; // Used in health check
+import jwt from "jsonwebtoken";
+import mongoose from "mongoose";
+
+import env from "./config/env.js";
+import connectDB from "./config/db.js";
 import logger from "./utils/logger.js";
-import mainRouter from "./routes/CentrilizeRoute.js";
 import morganMiddleware from "./middlewares/loggerMiddleware.js";
 import limiter from "./middlewares/rateLimiter.js";
-import { initializeSocket } from "./sockets/index.js";
 import errorHandler from "./middlewares/errorHandler.js";
-import connectDB from "./config/db.js";
-
-dotenv.config();
+import mainRouter from "./routes/CentrilizeRoute.js";
+import { initializeSocket } from "./sockets/index.js";
 
 const app = express();
 const server = createServer(app);
-console.log("EC2 demo")
-// Connect to MongoDB
+
 connectDB();
 
 const corsOptions = {
-  origin: "*",
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    if (env.ALLOWED_ORIGINS.includes("*") || env.ALLOWED_ORIGINS.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`CORS blocked: ${origin}`));
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 };
 
-// CORS configuration
 app.use(cors(corsOptions));
 
-// Security middleware
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -51,35 +55,17 @@ app.use(
   })
 );
 
-// Request parsing middleware
-app.use(express.json({ limit: "10kb" }));
-app.use(express.urlencoded({ extended: true, limit: "10kb" }));
+app.use(express.json({ limit: "100kb" }));
+app.use(express.urlencoded({ extended: true, limit: "100kb" }));
 
-
-
-// Logging middleware
-if (process.env.NODE_ENV !== "production") {
+if (!env.IS_PROD) {
   app.use(morgan("dev"));
 }
 app.use(morganMiddleware);
 
-// Rate limiting
 app.use(limiter);
 
-// Initialize Socket.io
-const io = new Server(server, {
-  cors: corsOptions,
-  connectionStateRecovery: {
-    maxDisconnectionDuration: 2 * 60 * 1000, // 2 minutes
-    skipMiddlewares: true,
-  },
-});
-initializeSocket(io);
-
-// Main API routes
-app.use(mainRouter);
-
-// Health check endpoint
+// Health endpoint MUST be registered before mainRouter (which has a "*" 404 catch-all)
 app.get("/health", (req, res) => {
   res.status(200).json({
     status: "healthy",
@@ -89,14 +75,32 @@ app.get("/health", (req, res) => {
   });
 });
 
-// Global error handling middleware (must be last)
+app.use(mainRouter);
+
 app.use(errorHandler);
 
-// Server startup
-const PORT = process.env.PORT || 5000;
-const NODE_ENV = process.env.NODE_ENV || "development";
+const io = new Server(server, {
+  cors: corsOptions,
+  connectionStateRecovery: {
+    maxDisconnectionDuration: 2 * 60 * 1000,
+    skipMiddlewares: true,
+  },
+});
 
-server.listen(PORT, () => {
-  console.log(`Server running in ${NODE_ENV} mode`);
-  console.log(`http://localhost:${PORT}`);
+io.use((socket, next) => {
+  const token = socket.handshake.auth?.token;
+  if (!token) return next(new Error("Authentication required"));
+  try {
+    socket.user = jwt.verify(token, env.JWT_SECRET);
+    next();
+  } catch (err) {
+    logger.warn(`Socket auth failed: ${err.message}`);
+    next(new Error("Authentication failed"));
+  }
+});
+
+initializeSocket(io);
+
+server.listen(env.PORT, () => {
+  logger.info(`Server running in ${env.NODE_ENV} mode on http://localhost:${env.PORT}`);
 });

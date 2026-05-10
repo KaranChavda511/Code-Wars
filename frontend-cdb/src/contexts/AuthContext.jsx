@@ -1,10 +1,8 @@
-
 import { createContext, useContext, useState, useEffect } from 'react';
 import API from '../services/api.js';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 
-// Create Context with undefined default
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -14,13 +12,15 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const loadUser = async () => {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        setIsLoading(false);
+        return;
+      }
       try {
-        const token = localStorage.getItem('token');
-        if (token) {
-          API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-          const { data } = await API.get('/users/me');
-          setUser(data);
-        }
+        API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        const { data } = await API.get('/users/me');
+        setUser(data);
       } catch (error) {
         localStorage.removeItem('token');
         delete API.defaults.headers.common['Authorization'];
@@ -31,11 +31,10 @@ export const AuthProvider = ({ children }) => {
     loadUser();
   }, []);
 
-  const login = async (token, userData) => {
+  const login = (token, userData) => {
     localStorage.setItem('token', token);
     API.defaults.headers.common['Authorization'] = `Bearer ${token}`;
     setUser(userData);
-    navigate('/');
   };
 
   const logout = () => {
@@ -47,31 +46,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   const updateUser = (updatedUser) => {
-    setUser(prev => ({ ...prev, ...updatedUser }));
-  };
-
-  const value = {
-    user,
-    isLoading,
-    login,
-    logout,
-    updateUser
+    setUser((prev) => ({ ...prev, ...updatedUser }));
   };
 
   return (
-    <AuthContext.Provider value={value}>
+    <AuthContext.Provider value={{ user, isLoading, login, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
-// Helper function for error in dev mode
-const throwIfNoProvider = () => {
-  if (import.meta.env.DEV) {
-    console.error('[AuthContext] No AuthProvider found around component tree.');
-  }
-};
-
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
