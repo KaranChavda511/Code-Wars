@@ -200,14 +200,14 @@ const VoiceAssistant = () => {
 
       {/* Panel */}
       {open && (
-        <section className="va-panel" role="dialog" aria-label="Optimus AI">
+        <section className="va-panel" role="dialog" aria-label="CDB AI">
 
           <header className="va-head">
             <div className="va-head__brand">
               <span className="va-head__rule" aria-hidden="true" />
               <div>
                 <div className="va-head__name">
-                  Optimus <span className="va-head__italic">AI</span>
+                  CDB <span className="va-head__italic">AI</span>
                 </div>
                 <div className="va-head__meta">
                   <span className={`va-status va-status--${meta.tone}`}>
@@ -255,7 +255,7 @@ const VoiceAssistant = () => {
                     <div className="va-turn__head">
                       <span className="va-turn__bar" aria-hidden="true" />
                       <span className="va-turn__who">
-                        {m.role === "user" ? "YOU" : "OPTIMUS"}
+                        {m.role === "user" ? "YOU" : "CDB"}
                       </span>
                       <span className="va-turn__time">{m.time}</span>
                     </div>
@@ -266,7 +266,7 @@ const VoiceAssistant = () => {
                   <li className="va-turn va-turn--assistant va-turn--ghost">
                     <div className="va-turn__head">
                       <span className="va-turn__bar" aria-hidden="true" />
-                      <span className="va-turn__who">OPTIMUS</span>
+                      <span className="va-turn__who">CDB</span>
                       <span className="va-turn__time">{timestamp()}</span>
                     </div>
                     <div className="va-typing" aria-label="Thinking">
